@@ -22,7 +22,7 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#opportunity">Opportunity</a>
-      <a href="#membership">Membership</a>
+      <a href="#membership">Tier Memberships</a>
       <a href="#corporate-tiers">Corporate Tiers</a>
       <a href="#perks">Perks</a>
       <a href="#calculator">Calculator</a>
@@ -50,7 +50,7 @@
   <!-- MEMBERSHIP TABS -->
   <div class="tabs" id="membershipTabs" role="tablist" aria-label="Membership type">
     <button type="button" class="tabs__btn is-active" data-tab="agency" role="tab" aria-selected="true">Modeling Agency</button>
-    <button type="button" class="tabs__btn" data-tab="corporate" role="tab" aria-selected="false">Corporate</button>
+    <button type="button" class="tabs__btn" data-tab="tier" role="tab" aria-selected="false">Tier Memberships</button>
     <button type="button" class="tabs__btn" data-tab="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
     <button type="button" class="tabs__btn" data-tab="music" role="tab" aria-selected="false">Music &amp; Record Labels</button>
     <span class="tabs__btn tabs__btn--soon" aria-disabled="true">More Coming Soon</span>
@@ -109,60 +109,6 @@
       </div>
     </div>
     <p class="section__note">Corporate membership gives your agency dedicated, discounted access across every shoot, pull, and public appearance.</p>
-  </section>
-
-  <!-- WHAT IS WWSH -->
-  <section class="section section--alt" id="membership">
-    <div class="section__head">
-      <p class="eyebrow">What is Wild West Social House?</p>
-      <h2>A luxury wardrobe &amp; lifestyle<br /><span class="italic">membership club.</span></h2>
-      <p class="section__lede">Each model's benefits depend on the tier chosen for them.</p>
-    </div>
-    <div class="tier-grid" id="wardrobeTiers">
-      <article class="tier-card">
-        <p class="tier-card__label">Tier 1</p>
-        <p class="tier-card__price">$299<span>/mo</span></p>
-        <p class="tier-card__value">Up to $3,000 retail value at a time</p>
-        <ul class="check-list">
-          <li class="yes">10-day rental period</li>
-          <li class="yes">Complimentary dry-cleaning</li>
-          <li class="yes">Clubhouse access + 2 guests</li>
-          <li class="yes">WWSH events &amp; event hosting</li>
-          <li class="yes">Free LA delivery &amp; pick-up</li>
-          <li class="no">Accessories</li>
-          <li class="no">Shoes</li>
-        </ul>
-      </article>
-      <article class="tier-card tier-card--featured">
-        <p class="tier-card__label">Tier 2</p>
-        <p class="tier-card__price">$499<span>/mo</span></p>
-        <p class="tier-card__value">Up to $6,000 retail value at a time</p>
-        <ul class="check-list">
-          <li class="yes">10-day rental period</li>
-          <li class="yes">Complimentary dry-cleaning</li>
-          <li class="yes">Clubhouse access + 2 guests</li>
-          <li class="yes">WWSH events &amp; event hosting</li>
-          <li class="yes">Free LA delivery &amp; pick-up</li>
-          <li class="yes">Accessories</li>
-          <li class="no">Shoes</li>
-        </ul>
-      </article>
-      <article class="tier-card">
-        <p class="tier-card__label">Tier 3</p>
-        <p class="tier-card__price">$999<span>/mo</span></p>
-        <p class="tier-card__value">15 items, no retail price ceiling</p>
-        <ul class="check-list">
-          <li class="yes">10-day rental period</li>
-          <li class="yes">Complimentary dry-cleaning</li>
-          <li class="yes">Clubhouse access + 2 guests</li>
-          <li class="yes">WWSH events &amp; event hosting</li>
-          <li class="yes">Free LA delivery &amp; pick-up</li>
-          <li class="yes">Accessories</li>
-          <li class="yes">Shoes</li>
-        </ul>
-      </article>
-    </div>
-    <p class="section__note">Event hosting: WWSH provides the space, all event expenses are the member's responsibility. Corporate perks (6-week pulls, tailoring, courier, joinders, H.Wood Rolodex) apply to all tiers.</p>
   </section>
 
   <!-- CORPORATE MEMBERSHIP TIERS -->
@@ -386,13 +332,59 @@
 
   </div><!-- /panel-agency -->
 
-  <!-- CORPORATE (placeholder) -->
-  <div class="tab-panel" data-panel="corporate" id="panel-corporate" hidden>
-    <section class="section tab-placeholder">
-      <p class="eyebrow">Corporate Memberships</p>
-      <h2>For Brands<br /><span class="italic">&amp; Businesses.</span></h2>
-      <p class="section__lede">A dedicated membership track for companies outside the modeling industry is coming soon. In the meantime, reach out and we'll put a program together for you.</p>
-      <a href="#contact" class="btn btn--dark">Get in Touch</a>
+  <!-- TIER MEMBERSHIPS -->
+  <div class="tab-panel" data-panel="tier" id="panel-tier" hidden>
+    <section class="section" id="membership">
+      <div class="section__head">
+        <p class="eyebrow">What is Wild West Social House?</p>
+        <h2>A luxury wardrobe &amp; lifestyle<br /><span class="italic">membership club.</span></h2>
+        <p class="section__lede">Each member's benefits depend on the tier chosen.</p>
+      </div>
+      <div class="tier-grid" id="wardrobeTiers">
+        <article class="tier-card">
+          <p class="tier-card__label">Tier 1</p>
+          <p class="tier-card__price">$299<span>/mo</span></p>
+          <p class="tier-card__value">Up to $3,000 retail value at a time</p>
+          <ul class="check-list">
+            <li class="yes">10-day rental period</li>
+            <li class="yes">Complimentary dry-cleaning</li>
+            <li class="yes">Clubhouse access + 2 guests</li>
+            <li class="yes">WWSH events &amp; event hosting</li>
+            <li class="yes">Free LA delivery &amp; pick-up</li>
+            <li class="no">Accessories</li>
+            <li class="no">Shoes</li>
+          </ul>
+        </article>
+        <article class="tier-card tier-card--featured">
+          <p class="tier-card__label">Tier 2</p>
+          <p class="tier-card__price">$499<span>/mo</span></p>
+          <p class="tier-card__value">Up to $6,000 retail value at a time</p>
+          <ul class="check-list">
+            <li class="yes">10-day rental period</li>
+            <li class="yes">Complimentary dry-cleaning</li>
+            <li class="yes">Clubhouse access + 2 guests</li>
+            <li class="yes">WWSH events &amp; event hosting</li>
+            <li class="yes">Free LA delivery &amp; pick-up</li>
+            <li class="yes">Accessories</li>
+            <li class="no">Shoes</li>
+          </ul>
+        </article>
+        <article class="tier-card">
+          <p class="tier-card__label">Tier 3</p>
+          <p class="tier-card__price">$999<span>/mo</span></p>
+          <p class="tier-card__value">15 items, no retail price ceiling</p>
+          <ul class="check-list">
+            <li class="yes">10-day rental period</li>
+            <li class="yes">Complimentary dry-cleaning</li>
+            <li class="yes">Clubhouse access + 2 guests</li>
+            <li class="yes">WWSH events &amp; event hosting</li>
+            <li class="yes">Free LA delivery &amp; pick-up</li>
+            <li class="yes">Accessories</li>
+            <li class="yes">Shoes</li>
+          </ul>
+        </article>
+      </div>
+      <p class="section__note">Event hosting: WWSH provides the space, all event expenses are the member's responsibility.</p>
     </section>
   </div>
 
