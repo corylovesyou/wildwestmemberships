@@ -193,14 +193,6 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--ink);
   color: var(--bg);
 }
-.tabs__btn--soon {
-  color: var(--ink-dim);
-  opacity: 0.45;
-  cursor: default;
-  border-style: dashed;
-}
-.tabs__btn--soon:hover { border-color: var(--line); color: var(--ink-dim); }
-
 .tab-placeholder {
   max-width: 40rem;
   margin: 0 auto;
