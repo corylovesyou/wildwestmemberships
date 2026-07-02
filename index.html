@@ -47,6 +47,17 @@
     <a href="#opportunity" class="scroll-cue"><span>Explore the Program</span><i></i></a>
   </section>
 
+  <!-- MEMBERSHIP TABS -->
+  <div class="tabs" id="membershipTabs" role="tablist" aria-label="Membership type">
+    <button type="button" class="tabs__btn is-active" data-tab="agency" role="tab" aria-selected="true">Modeling Agency</button>
+    <button type="button" class="tabs__btn" data-tab="corporate" role="tab" aria-selected="false">Corporate</button>
+    <button type="button" class="tabs__btn" data-tab="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
+    <button type="button" class="tabs__btn" data-tab="music" role="tab" aria-selected="false">Music &amp; Record Labels</button>
+    <span class="tabs__btn tabs__btn--soon" aria-disabled="true">More Coming Soon</span>
+  </div>
+
+  <div class="tab-panel" data-panel="agency" id="panel-agency">
+
   <!-- THE OPPORTUNITY -->
   <section class="section" id="opportunity">
     <div class="section__head">
@@ -372,6 +383,38 @@
       <div class="event-slot"></div>
     </div>
   </section>
+
+  </div><!-- /panel-agency -->
+
+  <!-- CORPORATE (placeholder) -->
+  <div class="tab-panel" data-panel="corporate" id="panel-corporate" hidden>
+    <section class="section tab-placeholder">
+      <p class="eyebrow">Corporate Memberships</p>
+      <h2>For Brands<br /><span class="italic">&amp; Businesses.</span></h2>
+      <p class="section__lede">A dedicated membership track for companies outside the modeling industry is coming soon. In the meantime, reach out and we'll put a program together for you.</p>
+      <a href="#contact" class="btn btn--dark">Get in Touch</a>
+    </section>
+  </div>
+
+  <!-- LIFESTYLE (placeholder) -->
+  <div class="tab-panel" data-panel="lifestyle" id="panel-lifestyle" hidden>
+    <section class="section tab-placeholder">
+      <p class="eyebrow">Lifestyle Memberships</p>
+      <h2>The Social<br /><span class="italic">Tier.</span></h2>
+      <p class="section__lede">Details on the social membership tier are coming soon. In the meantime, reach out and we'll get you set up.</p>
+      <a href="#contact" class="btn btn--dark">Get in Touch</a>
+    </section>
+  </div>
+
+  <!-- MUSIC & RECORD LABELS (placeholder) -->
+  <div class="tab-panel" data-panel="music" id="panel-music" hidden>
+    <section class="section tab-placeholder">
+      <p class="eyebrow">Music &amp; Record Labels</p>
+      <h2>For Artists<br /><span class="italic">&amp; Labels.</span></h2>
+      <p class="section__lede">Details on the music and record label membership track are coming soon. In the meantime, reach out and we'll get you set up.</p>
+      <a href="#contact" class="btn btn--dark">Get in Touch</a>
+    </section>
+  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">

@@ -15,6 +15,32 @@ navLinks.querySelectorAll('a').forEach((a) =>
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ---------- Membership Tabs ----------
+const tabBtns = document.querySelectorAll('.tabs__btn[data-tab]');
+const tabPanels = document.querySelectorAll('.tab-panel[data-panel]');
+
+function activateTab(tab) {
+  tabBtns.forEach((b) => {
+    const active = b.dataset.tab === tab;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-selected', String(active));
+  });
+  tabPanels.forEach((p) => {
+    p.hidden = p.dataset.panel !== tab;
+  });
+}
+
+tabBtns.forEach((b) => b.addEventListener('click', () => activateTab(b.dataset.tab)));
+
+// Nav links that point into a specific tab panel should switch to that tab first
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', () => {
+    const targetEl = document.getElementById(a.getAttribute('href').slice(1));
+    const panel = targetEl && targetEl.closest('.tab-panel[data-panel]');
+    if (panel) activateTab(panel.dataset.panel);
+  });
+});
+
 // ---------- Membership Calculator ----------
 const CORP_TIERS = [
   { name: 'Corporate Tier 3', discount: 0.2, minSpend: 20000 },
