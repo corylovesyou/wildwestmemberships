@@ -15,6 +15,26 @@ navLinks.querySelectorAll('a').forEach((a) =>
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ---------- Day / night mode ----------
+const themeToggle = document.querySelector('.theme-toggle');
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  try {
+    localStorage.setItem('wwsh-theme', theme);
+  } catch (e) {
+    /* localStorage unavailable, theme just won't persist */
+  }
+}
+themeToggle.setAttribute(
+  'aria-pressed',
+  String(document.documentElement.getAttribute('data-theme') === 'dark')
+);
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
 // ---------- Membership Tabs ----------
 const tabBtns = document.querySelectorAll('.tabs__btn[data-tab]');
 const tabPanels = document.querySelectorAll('.tab-panel[data-panel]');
