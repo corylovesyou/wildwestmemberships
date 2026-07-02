@@ -48,57 +48,61 @@ const CORP_TIERS = [
   { name: 'Corporate Tier 1', discount: 0.1, minSpend: 5000 },
 ];
 
-const tierGroup = document.getElementById('calcTierGroup');
-const modelsInput = document.getElementById('calcModels');
-const modelsOut = document.getElementById('calcModelsOut');
-const standardOut = document.getElementById('calcStandard');
-const corpTierOut = document.getElementById('calcCorpTier');
-const discountedOut = document.getElementById('calcDiscounted');
-const savingsOut = document.getElementById('calcSavings');
-const thresholdOut = document.getElementById('calcThreshold');
+const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
 
-let currentRate = 299;
+function initCalculator(root) {
+  const tierGroup = root.querySelector('.calc__tiers');
+  const modelsInput = root.querySelector('.calc__models');
+  const modelsOut = root.querySelector('.calc__models-out');
+  const standardOut = root.querySelector('.calc__standard');
+  const corpTierOut = root.querySelector('.calc__corp-tier');
+  const discountedOut = root.querySelector('.calc__discounted');
+  const savingsOut = root.querySelector('.calc__savings');
+  const thresholdOut = root.querySelector('.calc__note');
+  const unit = (root.dataset.unitLabel || 'Models').toLowerCase();
 
-const money = (n) =>
-  '$' + Math.round(n).toLocaleString('en-US');
+  let currentRate = Number(tierGroup.querySelector('.calc__tier-btn.is-active').dataset.rate);
 
-function updateCalculator() {
-  const models = Number(modelsInput.value);
-  modelsOut.textContent = models;
+  function update() {
+    const count = Number(modelsInput.value);
+    modelsOut.textContent = count;
 
-  const standardTotal = currentRate * models;
-  standardOut.textContent = money(standardTotal) + '/mo';
+    const standardTotal = currentRate * count;
+    standardOut.textContent = money(standardTotal) + '/mo';
 
-  const reached = CORP_TIERS.find((t) => standardTotal >= t.minSpend);
+    const reached = CORP_TIERS.find((t) => standardTotal >= t.minSpend);
 
-  if (reached) {
-    const discounted = standardTotal * (1 - reached.discount);
-    corpTierOut.textContent = `${reached.name} (${reached.discount * 100}% off)`;
-    discountedOut.textContent = money(discounted) + '/mo';
-    savingsOut.textContent = money(standardTotal - discounted) + '/mo';
-    thresholdOut.textContent = '';
-  } else {
-    const next = CORP_TIERS[CORP_TIERS.length - 1];
-    const modelsNeeded = Math.ceil(next.minSpend / currentRate);
-    corpTierOut.textContent = 'Not yet qualified';
-    discountedOut.textContent = money(standardTotal) + '/mo';
-    savingsOut.textContent = '$0';
-    thresholdOut.textContent = `Add ${modelsNeeded - models} more model${modelsNeeded - models === 1 ? '' : 's'} on this tier to unlock ${next.name} (${next.discount * 100}% off).`;
+    if (reached) {
+      const discounted = standardTotal * (1 - reached.discount);
+      corpTierOut.textContent = `${reached.name} (${reached.discount * 100}% off)`;
+      discountedOut.textContent = money(discounted) + '/mo';
+      savingsOut.textContent = money(standardTotal - discounted) + '/mo';
+      thresholdOut.textContent = '';
+    } else {
+      const next = CORP_TIERS[CORP_TIERS.length - 1];
+      const countNeeded = Math.ceil(next.minSpend / currentRate);
+      corpTierOut.textContent = 'Not yet qualified';
+      discountedOut.textContent = money(standardTotal) + '/mo';
+      savingsOut.textContent = '$0';
+      thresholdOut.textContent = `Add ${countNeeded - count} more ${unit} on this tier to unlock ${next.name} (${next.discount * 100}% off).`;
+    }
   }
+
+  tierGroup.addEventListener('click', (e) => {
+    const btn = e.target.closest('.calc__tier-btn');
+    if (!btn) return;
+    tierGroup.querySelectorAll('.calc__tier-btn').forEach((b) => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    currentRate = Number(btn.dataset.rate);
+    update();
+  });
+
+  modelsInput.addEventListener('input', update);
+
+  update();
 }
 
-tierGroup.addEventListener('click', (e) => {
-  const btn = e.target.closest('.calc__tier-btn');
-  if (!btn) return;
-  tierGroup.querySelectorAll('.calc__tier-btn').forEach((b) => b.classList.remove('is-active'));
-  btn.classList.add('is-active');
-  currentRate = Number(btn.dataset.rate);
-  updateCalculator();
-});
-
-modelsInput.addEventListener('input', updateCalculator);
-
-updateCalculator();
+document.querySelectorAll('.calc').forEach(initCalculator);
 
 // ---------- Scroll reveal ----------
 const revealTargets = document.querySelectorAll('.section__head, .panel, .tier-card, .stat-card, .perk-card');

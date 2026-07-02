@@ -275,58 +275,41 @@
       <p class="section__lede">Choose a wardrobe tier and roster size to see your corporate rate in real time.</p>
     </div>
 
-    <div class="calc">
+    <div class="calc" data-unit-label="Models">
       <div class="calc__controls">
         <div class="calc__field">
-          <label for="calcTier">WWSH Wardrobe Tier</label>
-          <div class="calc__tiers" id="calcTierGroup" role="group" aria-label="Wardrobe tier">
+          <label>WWSH Wardrobe Tier</label>
+          <div class="calc__tiers" role="group" aria-label="Wardrobe tier">
             <button type="button" class="calc__tier-btn is-active" data-tier="1" data-rate="299">Tier 1 &middot; $299</button>
             <button type="button" class="calc__tier-btn" data-tier="2" data-rate="499">Tier 2 &middot; $499</button>
             <button type="button" class="calc__tier-btn" data-tier="3" data-rate="999">Tier 3 &middot; $999</button>
           </div>
         </div>
         <div class="calc__field">
-          <label for="calcModels">Number of Models: <span id="calcModelsOut">10</span></label>
-          <input type="range" id="calcModels" min="1" max="100" value="10" step="1" />
+          <label>Number of <span class="calc__unit-label">Models</span>: <span class="calc__models-out">10</span></label>
+          <input type="range" class="calc__models" min="1" max="100" value="10" step="1" />
         </div>
       </div>
 
       <div class="calc__result">
         <div class="calc__result-row">
           <span>Standard Monthly Spend</span>
-          <strong id="calcStandard">$2,990</strong>
+          <strong class="calc__standard">$2,990</strong>
         </div>
         <div class="calc__result-row">
           <span>Corporate Tier Reached</span>
-          <strong id="calcCorpTier">Not yet qualified</strong>
+          <strong class="calc__corp-tier">Not yet qualified</strong>
         </div>
         <div class="calc__result-row calc__result-row--accent">
           <span>Your Discounted Monthly Spend</span>
-          <strong id="calcDiscounted">$2,990</strong>
+          <strong class="calc__discounted">$2,990</strong>
         </div>
         <div class="calc__result-row">
           <span>Monthly Savings</span>
-          <strong id="calcSavings">$0</strong>
+          <strong class="calc__savings">$0</strong>
         </div>
-        <p class="calc__note" id="calcThreshold"></p>
+        <p class="calc__note"></p>
       </div>
-    </div>
-  </section>
-
-  <!-- EVENTS / CLUBHOUSE -->
-  <section class="section section--alt" id="events">
-    <div class="section__head">
-      <p class="eyebrow">Clubhouse &amp; Events</p>
-      <h2>Inside the<br /><span class="italic">social house.</span></h2>
-      <p class="section__lede">Photos coming soon.</p>
-    </div>
-    <div class="event-grid">
-      <div class="event-slot"></div>
-      <div class="event-slot"></div>
-      <div class="event-slot"></div>
-      <div class="event-slot"></div>
-      <div class="event-slot"></div>
-      <div class="event-slot"></div>
     </div>
   </section>
 
@@ -398,15 +381,321 @@
     </section>
   </div>
 
-  <!-- MUSIC & RECORD LABELS (placeholder) -->
+  <!-- MUSIC & RECORD LABELS -->
   <div class="tab-panel" data-panel="music" id="panel-music" hidden>
-    <section class="section tab-placeholder">
-      <p class="eyebrow">Music &amp; Record Labels</p>
-      <h2>For Artists<br /><span class="italic">&amp; Labels.</span></h2>
-      <p class="section__lede">Details on the music and record label membership track are coming soon. In the meantime, reach out and we'll get you set up.</p>
-      <a href="#contact" class="btn btn--dark">Get in Touch</a>
+
+    <!-- MUSIC INTRO -->
+    <section class="section music-intro">
+      <p class="eyebrow">Corporate Membership Program</p>
+      <h2>Exclusive Fashion Access<br /><span class="italic">for Music &amp; Record Labels</span></h2>
+      <p class="section__lede">Dress your artists. Elevate your brand. Maximize your budget.</p>
     </section>
-  </div>
+
+    <!-- ARTISTS WEARING WILD WEST -->
+    <section class="section section--alt" id="music-artists">
+      <div class="section__head">
+        <p class="eyebrow">Artists Wearing Wild West</p>
+        <h2>Trusted on<br /><span class="italic">stage and set.</span></h2>
+      </div>
+      <div class="artist-row">
+        <span class="artist-badge">Suki Waterhouse</span>
+        <span class="artist-badge">The Mar&iacute;as</span>
+        <span class="artist-badge">Cailin Russo</span>
+        <span class="artist-badge">Nettspend</span>
+        <span class="artist-badge">2Hollis</span>
+        <span class="artist-badge">Yeat</span>
+      </div>
+    </section>
+
+    <!-- MUSIC OPPORTUNITY -->
+    <section class="section" id="music-opportunity">
+      <div class="section__head">
+        <p class="eyebrow">The Opportunity</p>
+        <h2>Your artists are walking billboards.<br /><span class="italic">Your styling budget should work smarter.</span></h2>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>What Your Label Needs</h3>
+          <ul class="feature-list">
+            <li>
+              <strong>Music Videos &amp; Photoshoots</strong>
+              <span>Multiple looks per shoot, kept for the full production window.</span>
+            </li>
+            <li>
+              <strong>Red Carpets &amp; Award Shows</strong>
+              <span>High-impact moments that define an artist's public image.</span>
+            </li>
+            <li>
+              <strong>Tours &amp; In-House Styling</strong>
+              <span>6-week pull access for touring artists vs. standard 10-day periods.</span>
+            </li>
+            <li>
+              <strong>Album Releases &amp; Showcases</strong>
+              <span>WWSH Clubhouse available for premiere events &amp; single drops.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel panel--accent">
+          <h3>The Shift WWSH Creates</h3>
+          <ul class="feature-list">
+            <li>
+              <strong>Less Styling Budget</strong>
+              <span>Discounted access replaces expensive outright wardrobe purchases.</span>
+            </li>
+            <li>
+              <strong>More for Production</strong>
+              <span>Redirect recovered budget to video assets, content &amp; creative.</span>
+            </li>
+            <li>
+              <strong>An Extension of Your Closet</strong>
+              <span>WWSH becomes your label's permanent on-call wardrobe partner.</span>
+            </li>
+            <li>
+              <strong>Clubhouse as a Venue</strong>
+              <span>Host album release events, showcases &amp; intimate artist sessions.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="section__note">Corporate membership gives your label dedicated, discounted access across every production and appearance.</p>
+    </section>
+
+    <!-- MUSIC TIER LINK -->
+    <section class="section section--alt tab-placeholder" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <p class="eyebrow">What is Wild West Social House?</p>
+      <h2>The same tiers,<br /><span class="italic">$299 to $999/mo.</span></h2>
+      <p class="section__lede">Every account is built on the individual wardrobe tiers ($299 / $499 / $999 per month), same as any other member. Corporate discounts stack on top.</p>
+      <a href="#membership" class="btn btn--outline">View Tier Memberships &amp; Pricing</a>
+    </section>
+
+    <!-- MUSIC CORPORATE TIERS -->
+    <section class="section" id="music-corporate-tiers">
+      <div class="section__head">
+        <p class="eyebrow">Corporate Membership Tiers</p>
+        <h2>Save as<br /><span class="italic">you scale.</span></h2>
+        <p class="section__lede">Discounts apply across $299, $499, and $999 memberships. Mix and match any combination of tiers across your roster.</p>
+      </div>
+      <div class="tier-grid">
+        <article class="tier-card">
+          <p class="tier-card__label">Corporate Spend</p>
+          <p class="tier-card__price">10<span>% off</span></p>
+          <p class="tier-card__value">$5,000 min. spend / mo</p>
+          <p class="tier-card__example">Example: 19 artists on Tier 1 = $5,119/mo</p>
+        </article>
+        <article class="tier-card tier-card--featured">
+          <p class="tier-card__label">Corporate Spend</p>
+          <p class="tier-card__price">15<span>% off</span></p>
+          <p class="tier-card__value">$10,000 min. spend / mo</p>
+          <p class="tier-card__example">Example: 10 on Tier 1, 10 on Tier 2, 4 on Tier 3 = $10,179/mo</p>
+        </article>
+        <article class="tier-card">
+          <p class="tier-card__label">Corporate Spend</p>
+          <p class="tier-card__price">20<span>% off</span></p>
+          <p class="tier-card__value">$20,000 min. spend / mo</p>
+          <p class="tier-card__example">All memberships discounted at every tier</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MUSIC JOINDERS -->
+    <section class="section section--alt" id="music-joinders">
+      <div class="section__head">
+        <p class="eyebrow">Joinders</p>
+        <h2>Pre-approved member access,<br /><span class="italic">included on every corporate account.</span></h2>
+        <p class="section__lede">A joinder is a person approved by Wild West Social House to use the corporate account for a specific occasion. They are not permanent account members, they are individually approved by WWSH at least 48 hours before they can access the account.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-card__num">2</p>
+          <p class="stat-card__label">Per Account, Per Year</p>
+          <p class="stat-card__desc">Every corporate membership, regardless of tier, includes 2 joinders per year. These do not roll over to the following year.</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__num">48h</p>
+          <p class="stat-card__label">WWSH Approval Required</p>
+          <p class="stat-card__desc">The joinder's name and intended date of use must be submitted to WWSH at least 48 hours in advance.</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__num">&#10003;</p>
+          <p class="stat-card__label">Right to Approve or Decline</p>
+          <p class="stat-card__desc">Wild West Social House reserves the right to approve or decline any joinder at their discretion, at any time.</p>
+        </div>
+      </div>
+      <p class="section__note">Joinders must be individually approved by WWSH no less than 48 hours before their date of use. 2 per corporate account per year. Non-transferable.</p>
+    </section>
+
+    <!-- MUSIC COST EFFICIENCY -->
+    <section class="section" id="music-cost">
+      <div class="section__head">
+        <p class="eyebrow">Cost Efficiency</p>
+        <h2>Built for your<br /><span class="italic">marketing budget.</span></h2>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Without WWSH</h3>
+          <ul class="plain-list plain-list--dim">
+            <li>Purchase outright: $800&ndash;$3,000/look</li>
+            <li>Manage, clean &amp; store wardrobe in-house</li>
+            <li>Coordinating stylists separately</li>
+            <li>Delivery &amp; transport costs add up</li>
+            <li>No return on pieces after use</li>
+            <li>No volume discount on spending</li>
+            <li>Scattered vendor relationships</li>
+          </ul>
+          <p class="panel__footer">Budget consumed by wardrobe ownership</p>
+        </div>
+        <div class="panel panel--accent">
+          <h3>With WWSH Corporate</h3>
+          <ul class="plain-list">
+            <li>Rent 15 items/person, no price ceiling</li>
+            <li>Dry-cleaning included, no extra logistics</li>
+            <li>One-stop styling partner for entire label</li>
+            <li>Free delivery &amp; pick-up across LA</li>
+            <li>6-week tour pull window, not just 10 days</li>
+            <li>Courier service on all corporate accounts</li>
+            <li>Temporary tailoring included</li>
+          </ul>
+          <p class="panel__footer panel__footer--accent">More budget for production &amp; video assets</p>
+        </div>
+      </div>
+      <p class="section__note">Redirect recovered budget to recording, video production, touring &amp; marketing amplification.</p>
+    </section>
+
+    <!-- MUSIC PERKS -->
+    <section class="section section--alt" id="music-perks">
+      <div class="section__head">
+        <p class="eyebrow">Corporate Membership Perks</p>
+        <h2>Exclusive benefits,<br /><span class="italic">every tier.</span></h2>
+      </div>
+      <div class="perk-grid perk-grid--3">
+        <article class="perk-card">
+          <p class="perk-card__tag">6W</p>
+          <h3>6-Week Tour Pulls</h3>
+          <p class="perk-card__meta">All corporate tiers</p>
+          <p>Standard WWSH memberships allow 10-day rental windows. Corporate members unlock extended 6-week pull access, designed for touring artists who need wardrobe coverage across a full run of shows without constant returns.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">TC</p>
+          <h3>Tailoring &amp; Courier</h3>
+          <p class="perk-card__meta">All corporate tiers</p>
+          <p>Every corporate account includes access to temporary tailoring for quick fit adjustments, plus a dedicated courier service for product pickup and delivery. No separate booking, no extra fees.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">2J</p>
+          <h3>2 Joinders Per Year</h3>
+          <p class="perk-card__meta">48-hr WWSH approval req'd</p>
+          <p>Each corporate account receives 2 joinders annually. A joinder is a person approved by WWSH to use the corporate account for a specific occasion, not a permanent member.</p>
+        </article>
+      </div>
+      <p class="section__note">These perks are in addition to standard WWSH membership benefits each account member receives through their chosen wardrobe tier.</p>
+    </section>
+
+    <!-- HOW YOUR LABEL USES WWSH -->
+    <section class="section" id="music-uses">
+      <div class="section__head">
+        <p class="eyebrow">How Your Label Uses WWSH</p>
+        <h2>From touring to<br /><span class="italic">album drops.</span></h2>
+        <p class="section__lede">One corporate membership covers every moment.</p>
+      </div>
+      <div class="perk-grid perk-grid--3">
+        <article class="perk-card">
+          <p class="perk-card__tag">Video</p>
+          <h3>Music Videos</h3>
+          <p>Pull full looks per featured artist. Keep pieces for the entire multi-day shoot. Styled, delivered, returned.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">Press</p>
+          <h3>Photoshoots &amp; Press</h3>
+          <p>New campaign looks for every press outlet, dry-cleaned and delivered on your production schedule.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">Event</p>
+          <h3>Red Carpets &amp; Award Shows</h3>
+          <p>High-profile appearances styled end-to-end. Performance looks, after-party fits, VIP access all in one place.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">Tours</p>
+          <h3>Tours &amp; In-House Styling</h3>
+          <p>Extended 6-week pull windows for touring artists. Free LA delivery for local shoots and appearances.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">Album</p>
+          <h3>Album Releases &amp; Showcases</h3>
+          <p>Use the WWSH Clubhouse to host your album premiere, single drop events, or intimate artist showcases.</p>
+        </article>
+        <article class="perk-card">
+          <p class="perk-card__tag">Social</p>
+          <h3>Social &amp; Video Content</h3>
+          <p>Consistent styling across Instagram, TikTok &amp; YouTube, without buying every look outright.</p>
+        </article>
+      </div>
+      <p class="section__note">The WWSH Clubhouse is your label's private space: events, showcases, networking, and album drops.</p>
+    </section>
+
+    <!-- MUSIC CALCULATOR -->
+    <section class="section section--alt" id="music-calculator">
+      <div class="section__head">
+        <p class="eyebrow">Save as You Scale</p>
+        <h2>See exactly what<br /><span class="italic">your label pays.</span></h2>
+        <p class="section__lede">Choose a wardrobe tier and roster size to see your corporate rate in real time.</p>
+      </div>
+
+      <div class="calc" data-unit-label="Artists">
+        <div class="calc__controls">
+          <div class="calc__field">
+            <label>WWSH Wardrobe Tier</label>
+            <div class="calc__tiers" role="group" aria-label="Wardrobe tier">
+              <button type="button" class="calc__tier-btn is-active" data-tier="1" data-rate="299">Tier 1 &middot; $299</button>
+              <button type="button" class="calc__tier-btn" data-tier="2" data-rate="499">Tier 2 &middot; $499</button>
+              <button type="button" class="calc__tier-btn" data-tier="3" data-rate="999">Tier 3 &middot; $999</button>
+            </div>
+          </div>
+          <div class="calc__field">
+            <label>Number of <span class="calc__unit-label">Artists</span>: <span class="calc__models-out">10</span></label>
+            <input type="range" class="calc__models" min="1" max="100" value="10" step="1" />
+          </div>
+        </div>
+
+        <div class="calc__result">
+          <div class="calc__result-row">
+            <span>Standard Monthly Spend</span>
+            <strong class="calc__standard">$2,990</strong>
+          </div>
+          <div class="calc__result-row">
+            <span>Corporate Tier Reached</span>
+            <strong class="calc__corp-tier">Not yet qualified</strong>
+          </div>
+          <div class="calc__result-row calc__result-row--accent">
+            <span>Your Discounted Monthly Spend</span>
+            <strong class="calc__discounted">$2,990</strong>
+          </div>
+          <div class="calc__result-row">
+            <span>Monthly Savings</span>
+            <strong class="calc__savings">$0</strong>
+          </div>
+          <p class="calc__note"></p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /panel-music -->
+
+  <!-- EVENTS / CLUBHOUSE (shared across all membership types) -->
+  <section class="section section--alt" id="events">
+    <div class="section__head">
+      <p class="eyebrow">Clubhouse &amp; Events</p>
+      <h2>Inside the<br /><span class="italic">social house.</span></h2>
+      <p class="section__lede">Photos coming soon.</p>
+    </div>
+    <div class="event-grid">
+      <div class="event-slot"></div>
+      <div class="event-slot"></div>
+      <div class="event-slot"></div>
+      <div class="event-slot"></div>
+      <div class="event-slot"></div>
+      <div class="event-slot"></div>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
